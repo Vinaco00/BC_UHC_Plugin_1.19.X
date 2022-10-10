@@ -1,0 +1,20 @@
+name: BC_UHC_Worldborder
+version: '${project.version}'
+main: net.vinaco.bc_uhc_worldborder.BC_UHC_Worldborder
+api-version: 1.19
+commands:
+  startuhc:
+    description: world border tester
+    usage: /<command>
+  worldborderconfigure:
+    description: configure border size, minsize, duration for boss bar
+    aliases:
+      - wbconfigure
+  finale:
+    description: triggers finale
+    usage: /<command>
+  enduhc:
+      description: ends the uhc at any point
+      usage: /<command>
+
+
