@@ -225,6 +225,7 @@ public final class BC_UHC_Worldborder extends JavaPlugin implements Listener {
             end.cancel();
         }
         String cmd = "tp @a " + finaleLocation[0] + " " + finaleLocation[1] + " " + finaleLocation[2];
+        getServer().dispatchCommand(getServer().getConsoleSender(), cmd);
         border.setSize(uhcMax);
         timerbar.setVisible(false);
     }
