@@ -6,7 +6,7 @@ commands:
   startuhc:
     description: world border tester
     usage: /<command>
-  worldborderconfigure:
+  uhcconfigure:
     description: configure border size, minsize, duration for boss bar
     aliases:
       - wbconfigure

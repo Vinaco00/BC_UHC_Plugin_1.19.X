@@ -49,7 +49,7 @@ public final class BC_UHC_Worldborder extends JavaPlugin implements Listener {
     public void onEnable() {
         // Plugin startup logic
         getServer().getPluginManager().registerEvents(this, this);
-        getCommand("worldborderconfigure").setTabCompleter(new TabComplete());
+        getCommand("uhcconfigure").setTabCompleter(new TabComplete());
         timerbar = Bukkit.getServer().createBossBar("World Border Timer", BarColor.BLUE, BarStyle.SEGMENTED_20);
         timerbar.setVisible(false);
         getServer().dispatchCommand(getServer().getConsoleSender(), "worldborder set " + uhcMax);
@@ -59,7 +59,7 @@ public final class BC_UHC_Worldborder extends JavaPlugin implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
         timerbar.addPlayer(player);
-        player.sendMessage("Hi");
+        //player.sendMessage("Hi");
     }
 
     @EventHandler
@@ -85,7 +85,7 @@ public final class BC_UHC_Worldborder extends JavaPlugin implements Listener {
                         }
                     }.runTaskLater(this, (uhcDuration + 2) * 20);
                 }
-                else if (command.getName().equalsIgnoreCase("worldborderconfigure")) {
+                else if (command.getName().equalsIgnoreCase("uhcconfigure")) {
                     if (args.length >= 2) {
 
                         if (args[0].equalsIgnoreCase("uhcmax")) {
@@ -144,18 +144,18 @@ public final class BC_UHC_Worldborder extends JavaPlugin implements Listener {
                         p.sendMessage("Player Spread Distance From Each Other: " + ChatColor.BLUE + spreaddistance);
                         p.sendMessage("Player Spread Range: " + ChatColor.BLUE + spreadrange);
                     } else if (args.length == 1 && args[0].equalsIgnoreCase("help")) {
-                        p.sendMessage(ChatColor.GREEN + "\"/worldborderconfigure\" to display the current World Border configuration");
-                        p.sendMessage(ChatColor.GREEN + "\"/worldborderconfigure uhcmax <UHC World Border Starting Size>\"");
-                        p.sendMessage(ChatColor.GREEN + "\"/worldborderconfigure uhcmin <UHC World Border Minimum Size>\"");
-                        p.sendMessage(ChatColor.GREEN + "\"/worldborderconfigure uhcduration <UHC World Border Shrinking Duration>\"");
-                        p.sendMessage(ChatColor.GREEN + "\"/worldborderconfigure uhccenter <UHC World Border Center>\"");
-                        p.sendMessage(ChatColor.GREEN + "\"/worldborderconfigure finalesize <Finale World Border Size>\"");
-                        p.sendMessage(ChatColor.GREEN + "\"/worldborderconfigure finalecenter <Finale World Border Center>\"");
-                        p.sendMessage(ChatColor.GREEN + "\"/worldborderconfigure finalelocation <Finale Teleport Location>\"");
-                        p.sendMessage(ChatColor.GREEN + "\"/worldborderconfigure spreaddistance <Player Spread Distance From Each Other>\"");
-                        p.sendMessage(ChatColor.GREEN + "\"/worldborderconfigure spreadrange <Player Spread Range>\"");
+                        p.sendMessage(ChatColor.GREEN + "\"/uhcconfigure\" to display the current World Border configuration");
+                        p.sendMessage(ChatColor.GREEN + "\"/uhcconfigure uhcmax <UHC World Border Starting Size>\"");
+                        p.sendMessage(ChatColor.GREEN + "\"/uhcconfigure uhcmin <UHC World Border Minimum Size>\"");
+                        p.sendMessage(ChatColor.GREEN + "\"/uhcconfigure uhcduration <UHC World Border Shrinking Duration>\"");
+                        p.sendMessage(ChatColor.GREEN + "\"/uhcconfigure uhccenter <UHC World Border Center>\"");
+                        p.sendMessage(ChatColor.GREEN + "\"/uhcconfigure finalesize <Finale World Border Size>\"");
+                        p.sendMessage(ChatColor.GREEN + "\"/uhcconfigure finalecenter <Finale World Border Center>\"");
+                        p.sendMessage(ChatColor.GREEN + "\"/uhcconfigure finalelocation <Finale Teleport Location>\"");
+                        p.sendMessage(ChatColor.GREEN + "\"/uhcconfigure spreaddistance <Player Spread Distance From Each Other>\"");
+                        p.sendMessage(ChatColor.GREEN + "\"/uhcconfigure spreadrange <Player Spread Range>\"");
                     } else {
-                        p.sendMessage(ChatColor.RED + "Invalid number of arguments. Use \"/worldborderconfigure help\" for help with the command.");
+                        p.sendMessage(ChatColor.RED + "Invalid number of arguments. Use \"/uhcconfigure help\" for help with the command.");
                     }
                 }
                 else if (command.getName().equalsIgnoreCase("finale")) {

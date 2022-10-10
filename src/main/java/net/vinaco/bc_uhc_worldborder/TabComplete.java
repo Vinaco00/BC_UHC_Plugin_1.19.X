@@ -13,7 +13,7 @@ public class TabComplete implements TabCompleter {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("worldborderconfigure") || cmd.getName().equalsIgnoreCase("wbconfigure")){
+        if (cmd.getName().equalsIgnoreCase("uhcconfigure") || cmd.getName().equalsIgnoreCase("wbconfigure")){
             if (args.length == 1){
                 List<String> arguments = new ArrayList<>();
                 arguments.add("uhcmax");
